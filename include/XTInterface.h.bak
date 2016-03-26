@@ -1,0 +1,38 @@
+#ifndef _XTINTERFACE_H_
+#define _XTINTERFACE_H_
+
+#if defined(_WIN32) && !(defined(__GNUC__))
+#define XT_REMOTE_EXPORT __declspec(dllexport)
+#else
+#define XT_REMOTE_EXPORT  
+#endif
+
+typedef void (*OnXTServiceCallback)(const int eventType,void *param0,void *param1);
+typedef void (*OnXTServiceRemoteControlRequest)(const int nRequest,const char *id,void *param0,void *param1);
+typedef void (*OnXTServiceRemoteControlStatus)(const int nStatus,const char *id,void *param0,void *param1);
+
+extern XT_REMOTE_EXPORT int  XtRemoteInit(OnXTServiceCallback serverCall,OnXTServiceRemoteControlRequest controlCall,OnXTServiceRemoteControlStatus controlStaCall);
+extern XT_REMOTE_EXPORT int  XtRemoteUnInit();
+
+extern XT_REMOTE_EXPORT int  RegisterXTService(void);
+extern XT_REMOTE_EXPORT int  UnregisterXTService(void);
+
+extern XT_REMOTE_EXPORT int  StartXTService(const char *id,const char *password,int bRememberUser,int mode);
+extern XT_REMOTE_EXPORT int  StopXTService(void);
+extern XT_REMOTE_EXPORT int  RunXTServer(void);
+
+extern XT_REMOTE_EXPORT int  LoginXTServer(const char *id,const char *pwd);
+extern XT_REMOTE_EXPORT int  RequestRemoteControlByAuthCode(const char *id,const char *AuthCode);
+extern XT_REMOTE_EXPORT int  RequestRemoteControl(const char *id);
+extern XT_REMOTE_EXPORT int  ResponseRemoteControl(const char * id,const int Response);
+
+extern XT_REMOTE_EXPORT int  SetAuthCode(const char *AuthCode);
+
+extern XT_REMOTE_EXPORT int  TerminateRemoteControl(const char * id);
+
+enum {
+	XTS_REGISTER_SERVER_SUCCESS,//注册服务成功
+	XTS_REGISTER_SERVER_FAILED,//注册服务失败
+};
+
+#endif

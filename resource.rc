@@ -1,0 +1,4 @@
+aaaa ICON "wx/msw/std.ico"
+taskbar ICON "res/appicon.ico"
+
+#include "wx/msw/wx.rc"

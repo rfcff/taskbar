@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="XlinkTaskbarDialog">
+		<title>wxWidgets app</title>
+		<id_arg>0</id_arg>
+		<object class="wxBoxSizer" variable="BoxSizer1" member="yes">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
+					<focused>1</focused>
+					<handler function="OnNotebook1PageChanged" entry="EVT_NOTEBOOK_PAGE_CHANGED" />
+					<object class="notebookpage">
+						<object class="wxPanel" name="ID_TAB_BASICINFO" variable="BasicInfo" member="yes">
+							<size>540,300</size>
+							<handler function="OnBasicInfoPaint" entry="EVT_PAINT" />
+							<object class="wxStaticText" name="ID_TXT_STATUS" variable="Status" member="yes">
+								<label>程序状态：未登录</label>
+								<pos>15,20</pos>
+							</object>
+							<object class="wxStaticLine" name="ID_STATICLINE1" variable="StaticLine1" member="yes">
+								<pos>15,50</pos>
+								<size>515,-1</size>
+							</object>
+							<object class="wxStaticText" name="ID_TXT_DEVICEID" variable="DeviceID" member="yes">
+								<label>设备ID：</label>
+								<pos>15,70</pos>
+							</object>
+							<object class="wxTextCtrl" name="ID_TEXT_DEVICEID" variable="TextDevID" member="yes">
+								<maxlength>128</maxlength>
+								<pos>15,90</pos>
+								<size>500,25</size>
+								<help>设备ID</help>
+							</object>
+							<object class="wxStaticText" name="ID_STATIC_DEVICENAME" variable="Name" member="yes">
+								<label>名称：</label>
+								<pos>15,130</pos>
+							</object>
+							<object class="wxTextCtrl" name="ID_TEXT_DEVNAME" variable="TextDevName" member="yes">
+								<maxlength>128</maxlength>
+								<pos>15,150</pos>
+								<size>500,25</size>
+								<help>设备名字</help>
+							</object>
+							<object class="wxStaticLine" name="ID_STATICLINE2" variable="StaticLine2" member="yes">
+								<pos>15,190</pos>
+								<size>515,-1</size>
+							</object>
+							<object class="wxCheckBox" name="ID_CHECKBOX_AUTOSTART" variable="CheckBoxAutoStart" member="yes">
+								<label>随计算机启动</label>
+								<pos>15,210</pos>
+								<handler function="OnCheckBoxAutoStartClick" entry="EVT_CHECKBOX" />
+							</object>
+							<object class="wxCheckBox" name="ID_CHECKBOX_REMOTE_WINDOW" variable="CheckBoxRemoteWindow" member="yes">
+								<label>远程时自动显示会话窗口</label>
+								<pos>15,240</pos>
+								<handler function="OnCheckBoxRemoteWindowClick" entry="EVT_CHECKBOX" />
+							</object>
+						</object>
+						<label>基本信息</label>
+					</object>
+					<object class="notebookpage">
+						<object class="wxPanel" name="ID_TAB_SECURITY" variable="SecuritySettings" member="yes">
+							<size>540,300</size>
+							<object class="wxCheckBox" name="ID_CHECK_AUTHACCESS" variable="CheckBoxAuthAccess" member="yes">
+								<label>启用授权码访问</label>
+								<pos>15,20</pos>
+								<handler function="OnCheckBoxAuthAccessClick" entry="EVT_CHECKBOX" />
+							</object>
+							<object class="wxRadioButton" name="ID_RADIOBUTTON_RANDOM_AUTH" variable="RadioButtonRandomAuth" member="yes">
+								<label>使用随机授权码</label>
+								<pos>30,55</pos>
+								<enabled>0</enabled>
+								<handler function="OnRadioButtonRandomAuthSelect" entry="EVT_RADIOBUTTON" />
+							</object>
+							<object class="wxTextCtrl" name="ID_TEXTCTRL_RANDOM_AUTH" variable="TextCtrlRandomAuth" member="yes">
+								<maxlength>64</maxlength>
+								<pos>30,80</pos>
+								<size>200,25</size>
+								<enabled>0</enabled>
+							</object>
+							<object class="wxRadioButton" name="ID_RADIOBUTTON_FIX_AUTH" variable="RadioButtonFixAuth" member="yes">
+								<label>使用固定授权码</label>
+								<pos>30,125</pos>
+								<enabled>0</enabled>
+								<handler function="OnRadioButtonFixAuthSelect" entry="EVT_RADIOBUTTON" />
+							</object>
+							<object class="wxTextCtrl" name="ID_TEXTCTRL_FIX_AUTH" variable="TextCtrlFixAuth" member="yes">
+								<maxlength>64</maxlength>
+								<pos>30,150</pos>
+								<size>200,25</size>
+								<enabled>0</enabled>
+							</object>
+							<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl3" member="yes">
+								<maxlength>64</maxlength>
+								<pos>250,150</pos>
+								<size>200,25</size>
+								<enabled>0</enabled>
+							</object>
+						</object>
+						<label>安全设置</label>
+					</object>
+					<object class="notebookpage">
+						<object class="wxPanel" name="ID_TAB_ACCESSLOG" variable="AccessLog" member="yes">
+							<size>540,300</size>
+							<object class="wxStaticText" name="ID_STATICTEXT_LOG" variable="StaticTextLog" member="yes">
+								<label>当前无系统日志</label>
+								<pos>0,0</pos>
+								<size>540,300</size>
+							</object>
+						</object>
+						<label>访问日志</label>
+					</object>
+				</object>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>10</border>
+				<option>1</option>
+			</object>
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer2" member="yes">
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BTNOK" variable="Button1" member="yes">
+							<label>确 定</label>
+							<handler function="OnAbout" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>4</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BTNCANCEL" variable="Button2" member="yes">
+							<label>取 消</label>
+							<handler function="OnQuit" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>4</border>
+						<option>1</option>
+					</object>
+				</object>
+				<flag>wxBOTTOM|wxLEFT|wxRIGHT|wxALIGN_RIGHT</flag>
+				<border>10</border>
+			</object>
+		</object>
+	</object>
+</wxsmith>

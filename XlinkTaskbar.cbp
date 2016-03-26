@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="XlinkTaskbar" />
+		<Option pch_mode="2" />
+		<Option compiler="microsoft_visual_c_2012" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/XlinkTaskbar" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="msvc8" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="/MTd" />
+					<Add option="/Zi" />
+					<Add option="/D_DEBUG" />
+					<Add option="/D__WXDEBUG__" />
+					<Add directory="D:/source/wxWidgets-3.1.0/lib/vc_lib/mswud" />
+					<Add directory="include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="D:/source/wxWidgets-3.1.0/lib/vc_lib/mswud" />
+					<Add directory="include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add library="../../wxWidgets-3.1.0/lib/vc_lib/wxmsw31ud_core.lib" />
+					<Add library="wxpngd.lib" />
+					<Add library="wxjpegd.lib" />
+					<Add library="wxtiffd.lib" />
+					<Add library="wxzlibd.lib" />
+					<Add library="../../wxWidgets-3.1.0/lib/vc_lib/wxbase31ud.lib" />
+					<Add library="../../wxWidgets-3.1.0/lib/vc_lib/wxmsw31ud_adv.lib" />
+					<Add library="lib/XTSDK.lib" />
+					<Add directory="D:/source/wxWidgets-3.1.0/lib/vc_lib" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/XlinkTaskbar" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="msvc8" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="/MT" />
+					<Add option="/O2" />
+					<Add option="/Ox" />
+					<Add option="/DNDEBUG" />
+					<Add directory="D:/source/wxWidgets-3.1.0/lib/vc_lib/mswu" />
+					<Add directory="include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="D:/source/wxWidgets-3.1.0/lib/vc_lib/mswu" />
+					<Add directory="include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="../../wxWidgets-3.1.0/lib/vc_lib/wxmsw31u_core.lib" />
+					<Add library="wxpng.lib" />
+					<Add library="wxjpeg.lib" />
+					<Add library="wxtiff.lib" />
+					<Add library="wxzlib.lib" />
+					<Add library="../../wxWidgets-3.1.0/lib/vc_lib/wxbase31u.lib" />
+					<Add library="../../wxWidgets-3.1.0/lib/vc_lib/wxmsw31u_adv.lib" />
+					<Add library="lib/XTSDK.lib" />
+					<Add directory="D:/source/wxWidgets-3.1.0/lib/vc_lib" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="/DWIN32" />
+			<Add option="/D__WIN32__" />
+			<Add option="/D__WXMSW__" />
+			<Add option="/DwxUSE_UNICODE" />
+			<Add option="/D_WINDOWS" />
+			<Add option="/EHs" />
+			<Add option="/EHc" />
+			<Add option="/D_CRT_SECURE_DEPRECATE" />
+			<Add option="/D_CRT_NONSTDC_NO_DEPRECATE" />
+			<Add option="/D_CRT_SECURE_NO_WARNINGS" />
+			<Add option="/Zc:wchar_t" />
+			<Add option="/Zc:auto" />
+			<Add option="/W3" />
+			<Add directory="D:/source/wxWidgets-3.1.0/include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="D:/source/wxWidgets-3.1.0/include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="/INCREMENTAL:NO" />
+			<Add option="/SUBSYSTEM:WINDOWS" />
+			<Add library="winmm.lib" />
+			<Add library="rpcrt4.lib" />
+			<Add library="kernel32.lib" />
+			<Add library="user32.lib" />
+			<Add library="gdi32.lib" />
+			<Add library="winspool.lib" />
+			<Add library="comdlg32.lib" />
+			<Add library="advapi32.lib" />
+			<Add library="shell32.lib" />
+			<Add library="ole32.lib" />
+			<Add library="oleaut32.lib" />
+			<Add library="uuid.lib" />
+			<Add library="comctl32.lib" />
+			<Add library="wsock32.lib" />
+			<Add library="odbc32.lib" />
+		</Linker>
+		<Unit filename="RemoteControlRequestDlg.cpp" />
+		<Unit filename="RemoteControlRequestDlg.h" />
+		<Unit filename="Resource.h" />
+		<Unit filename="TaskBarIcon.cpp" />
+		<Unit filename="TaskBarIcon.h" />
+		<Unit filename="XlinkTaskbarApp.cpp" />
+		<Unit filename="XlinkTaskbarApp.h" />
+		<Unit filename="XlinkTaskbarMain.cpp" />
+		<Unit filename="XlinkTaskbarMain.h" />
+		<Unit filename="common.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="wxsmith/XlinkTaskbardialog.wxs" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="XlinkTaskbarApp.cpp" main="XlinkTaskbarDialog" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxDialog wxs="wxsmith/XlinkTaskbardialog.wxs" src="XlinkTaskbarMain.cpp" hdr="XlinkTaskbarMain.h" fwddecl="0" i18n="1" name="XlinkTaskbarDialog" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
